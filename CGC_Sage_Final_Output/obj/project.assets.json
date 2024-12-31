@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gello\\source\\repos\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output.csproj",
+      "projectUniqueName": "C:\\Users\\gello\\Documents\\GitHub\\Development-of-CGC-Sage\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output.csproj",
       "projectName": "CGC_Sage_Final_Output",
-      "projectPath": "C:\\Users\\gello\\source\\repos\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output.csproj",
+      "projectPath": "C:\\Users\\gello\\Documents\\GitHub\\Development-of-CGC-Sage\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output.csproj",
       "packagesPath": "C:\\Users\\gello\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gello\\source\\repos\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output\\obj\\",
+      "outputPath": "C:\\Users\\gello\\Documents\\GitHub\\Development-of-CGC-Sage\\CGC_Sage_Final_Output\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gello\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,7 +45,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "all"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -65,10 +66,6 @@
           {
             "name": "Microsoft.AspNetCore.App.Ref",
             "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
-            "version": "[9.0.100, 9.0.100]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",

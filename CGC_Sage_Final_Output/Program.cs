@@ -929,21 +929,25 @@ namespace CGC_sage_debug
                             Console.Write("[1] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Creating new inventions");
+                            Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[2] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Solving logical puzzles");
+                            Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[3] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Running your own business");
+                            Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[4] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine("Designing");
+                            Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("Input the number of your answer: ");

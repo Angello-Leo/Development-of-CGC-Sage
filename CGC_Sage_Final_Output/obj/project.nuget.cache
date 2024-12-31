@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yONwSLnEcqg=",
+  "dgSpecHash": "bAyPPQoVHBQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gello\\source\\repos\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output.csproj",
+  "projectFilePath": "C:\\Users\\gello\\Documents\\GitHub\\Development-of-CGC-Sage\\CGC_Sage_Final_Output\\CGC_Sage_Final_Output.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gello\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.100\\microsoft.net.sdk.compilers.toolset.9.0.100.nupkg.sha512",
-    "C:\\Users\\gello\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
     "C:\\Users\\gello\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\gello\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
     "C:\\Users\\gello\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
     "C:\\Users\\gello\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.11\\microsoft.netcore.app.host.win-x64.8.0.11.nupkg.sha512"
   ],
