@@ -2257,7 +2257,7 @@ namespace CGC_sage_debug
         static double score = 0; // score of the player
         static double comboScore = 1; // comboScore used to multiply to the score
         static bool gameOver = false; // controls for the running the game.
-        static int attempts = 1; // refers to the limit of tries of the user after a wrong input
+        static int attempts = 3; // refers to the limit of tries of the user after a wrong input
         static bool control = true; // controls for the loop of control
         static bool challenge = false; // for enabling challenge mode.
 
