@@ -1415,40 +1415,38 @@ namespace CGC_sage_debug
 
                                 if (careerscore <= 10 && careerscore < 11)
                                 {
+                                    careerplanning = false;
                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                     DisplayFreeLance();
-                                    CareerPlanTryAgain();
-                                    Main();
                                     break;
                                 }
                                 else if (careerscore > 10 && careerscore <= 20)
                                 {
+                                    careerplanning = false;
                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                     DisplayEntrepreneur();
-                                    CareerPlanTryAgain();
-                                    Main();
                                     break;
                                 }
                                 else if (careerscore > 20 && careerscore <= 30)
                                 {
+                                    careerplanning = false;
                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                     DisplaySkill();
-                                    CareerPlanTryAgain();
-                                    Main();
                                     break;
                                 }
                                 else if (careerscore > 30)
                                 {
+                                    careerplanning = false;
                                     Console.ForegroundColor = ConsoleColor.Cyan;
                                     DisplayKnowledge();
-                                    CareerPlanTryAgain();
-                                    Main();
                                     break;
                                 }
                             }
                         }
                     }
                 }
+
+
             }
 
 
@@ -1578,7 +1576,7 @@ namespace CGC_sage_debug
             Console.WriteLine("\t(Press any key to Continue)");
             Console.ReadKey();
             Console.Clear();
-            StartProgram();
+            CareerPlanTryAgain();
 
         }
 
@@ -1635,6 +1633,7 @@ namespace CGC_sage_debug
             Console.WriteLine("\t(Press any key to Continue)");
             Console.ReadKey();
             Console.Clear();
+            CareerPlanTryAgain();
 
         }
 
@@ -1691,6 +1690,7 @@ namespace CGC_sage_debug
             Console.WriteLine("\t(Press any key to Continue)");
             Console.ReadKey();
             Console.Clear();
+            CareerPlanTryAgain();
 
         }
 
@@ -1747,6 +1747,7 @@ namespace CGC_sage_debug
             Console.WriteLine("\t(Press any key to Continue)");
             Console.ReadKey();
             Console.Clear();
+            CareerPlanTryAgain();
 
         }
 
@@ -1785,15 +1786,15 @@ namespace CGC_sage_debug
                 // Check if the key pressed is Enter or Escape
                 if (keyInfo.Key == ConsoleKey.Enter)
                 {
+                    validKey = true;
                     CareerPlanning(); // Restart the Career Planning process
                     Console.Clear();
-                    validKey = true;
                 }
                 else if (keyInfo.Key == ConsoleKey.Escape)
                 {
                     StartProgram(); // Start the program from the beginning
                     Console.Clear(); // Clear the console
-                    validKey = true;
+                    break;
                 }
                 else
                 {
@@ -1802,6 +1803,7 @@ namespace CGC_sage_debug
                     PrintCentered("Invalid key. Press Enter for Yes, Esc for No.");
                     validKey = false;
                 }
+
             }
 
             // Wait for a key press before closing
@@ -1895,7 +1897,7 @@ namespace CGC_sage_debug
 
             // The messages to display
             string welcomeMessage = "Thank you for using CGC Sage";
-            string pressStartMessage = "Press Any key to return to Title Screen";
+            string pressStartMessage = "Press Any key to exit the program";
 
             // Calculate the center position for the welcome message
             int welcomeX = (consoleWidth - welcomeMessage.Length) / 2;
@@ -1915,6 +1917,9 @@ namespace CGC_sage_debug
 
             // Wait for a key press before closing
             Console.ReadKey();
+            Console.Clear();
+            Environment.Exit(0); // Terminate the program
+
         }
 
         public static void UnitConverter()
@@ -2252,7 +2257,7 @@ namespace CGC_sage_debug
         static double score = 0; // score of the player
         static double comboScore = 1; // comboScore used to multiply to the score
         static bool gameOver = false; // controls for the running the game.
-        static int attempts = 3; // refers to the limit of tries of the user after a wrong input
+        static int attempts = 1; // refers to the limit of tries of the user after a wrong input
         static bool control = true; // controls for the loop of control
         static bool challenge = false; // for enabling challenge mode.
 
@@ -2665,7 +2670,7 @@ namespace CGC_sage_debug
 
             // Displays "Guessing Game" at the top side of the Console.
             Console.SetCursorPosition(width / 2 - 6, height / 2 + -9);
-            Console.Write("Guessing Game!");
+            Console.Write("Guessing Game! (Wait for all the boxes to appear)");
 
             // Displays the function of Enter on the bottom left of the Console
             Console.SetCursorPosition(width / 2 + -40, height / 2 + 9);
@@ -2964,17 +2969,10 @@ namespace CGC_sage_debug
                         switch (res)
                         {
                             case "Y":
-                                //Ending Message
-                                Console.Clear();
-                                Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -3);
-                                Console.Write("Game Over!!");
-                                Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -2);
-                                Console.Write("Thank you for Playing!!");
-                                Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -1);
-                                Console.Write("Score: " + score);
-                                Console.ReadKey(true);
-                                Console.Clear();
-                                StartProgram();
+                                loop = false;
+                                game = 'e';
+                                GameOverMessage();
+                                PlayGame();
                                 break; // quits the game
                             case "N": // deletes the message and go back to original position
                                 Console.SetCursorPosition(width / 2 - 10, height / 2 + 7);
@@ -3049,9 +3047,11 @@ namespace CGC_sage_debug
             else if (Boxes.checkBoxes + Boxes.wrongBoxes == maxRows) // it not all the rows are marked as check
             {
                 attempts -= 1; // minus attempts
-                if (attempts == 0) // if all the attempts has been used
+                while (attempts == 0) // if all the attempts has been used
                 {
-                    gameOver = true; // end the game
+                    GameOverMessage(); // end the game
+                    PlayGame();
+                    break;
                 }
             }
             Console.ReadKey(true);
@@ -3172,6 +3172,18 @@ namespace CGC_sage_debug
                 Save.input[num] = input; // saved inputed by the player
             }
         }
+        static void GameOverMessage()
+        {
+            Console.Clear();
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -3);
+            Console.Write("Game Over!!");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -2);
+            Console.Write("Thank you for Playing!!");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -1);
+            Console.Write("Score: " + score);
+            Console.ReadKey(true);
+            Console.Clear();
+        }
 
         // Import necessary Windows API functions
         [DllImport("kernel32.dll")]
@@ -3233,4 +3245,5 @@ struct Boxes
     public static int checkBoxes;
     public static int wrongBoxes;
 }
+
 
