@@ -2669,7 +2669,7 @@ namespace CGC_sage_debug
             Console.Write("Attempts " + attempts);
 
             // Displays "Guessing Game" at the top side of the Console.
-            Console.SetCursorPosition(width / 2 - 6, height / 2 + -9);
+            Console.SetCursorPosition(width / 3 - 6, height / 2 + -9);
             Console.Write("Guessing Game! (Wait for all the boxes to appear)");
 
             // Displays the function of Enter on the bottom left of the Console
