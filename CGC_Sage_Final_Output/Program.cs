@@ -50,6 +50,7 @@ namespace CGC_sage_debug
                         case 4:
                             keepRunning = false;
                             ExitScreen(); // Exit Screen Method
+                            Console.Clear();
                             break;
 
                         default:
@@ -623,8 +624,8 @@ namespace CGC_sage_debug
                     switch (selection)
                     {
                         case 0:
-                            Progamstart = false;
                             ExitScreen(); // Exit Screen Method
+                            Progamstart = false;
                             break;
                         case 1:
                             CareerPlanning(); // Career Planning Method
@@ -656,35 +657,7 @@ namespace CGC_sage_debug
             bool careerplanning = true;
             while (careerplanning == true)
             {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                PrintCentered("Welcome to CGCSage Career Planning!");
-                PrintLine();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("[1] Start");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("[2] Exit");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write("Input Answer then type enter: ");
-                Console.ResetColor();
-                int CareerInput = Convert.ToInt32(Console.ReadLine());
-
-                switch (CareerInput)
-                {
-                    case 1:
-                        careerplanning = false;
-                        CareerPlanInstructions();
-                        break;
-
-                    case 2:
-                        StartProgram();
-                        break;
-                }
-                if (CareerInput < 2)
-                {
-                    Console.Write("Please enter a valid number");
-                    Console.Clear();
-                }
-
+                CareerPlanInstructions();
                 bool startcareer = true;
                 int careerscore = 0;
                 bool question1 = true;
@@ -859,7 +832,7 @@ namespace CGC_sage_debug
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[2] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine(" Listening to Music");
+                            Console.WriteLine("Listening to Music");
                             Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -871,7 +844,7 @@ namespace CGC_sage_debug
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[4] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine(" Playing Games");
+                            Console.WriteLine("Playing Games");
                             Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -1077,7 +1050,7 @@ namespace CGC_sage_debug
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[1] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine(" Writing esssays'");
+                            Console.WriteLine("Writing esssays'");
                             Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -1383,7 +1356,7 @@ namespace CGC_sage_debug
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write("[2] ");
                             Console.ForegroundColor = ConsoleColor.Cyan;
-                            Console.WriteLine(" 1 day before the exam");
+                            Console.WriteLine("1 day before the exam");
                             Console.WriteLine(" ");
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -1813,6 +1786,7 @@ namespace CGC_sage_debug
                 if (keyInfo.Key == ConsoleKey.Enter)
                 {
                     CareerPlanning(); // Restart the Career Planning process
+                    Console.Clear();
                     validKey = true;
                 }
                 else if (keyInfo.Key == ConsoleKey.Escape)
@@ -1881,11 +1855,11 @@ namespace CGC_sage_debug
             // Print the options
             PrintCentered("Select an option below:");
             Console.WriteLine();
-            Console.WriteLine("1. Login to Existing user");
-            Console.WriteLine("2. Create a new user");
-            Console.WriteLine("3. Delete a user");
+            Console.WriteLine("[1] Login to Existing user");
+            Console.WriteLine("[2] Create a new user");
+            Console.WriteLine("[3] Delete a user");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("[4] Exit");
 
             // Reset the color settings
             Console.ResetColor();
