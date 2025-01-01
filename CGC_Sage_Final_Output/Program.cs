@@ -2268,16 +2268,6 @@ namespace CGC_sage_debug
                 PlayGame(); // runs the game
             }
 
-            //Ending Message
-            Console.Clear();
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -3);
-            Console.Write("Game Over!!");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -2);
-            Console.Write("Thank you for Playing!!");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -1);
-            Console.Write("Score: " + score);
-            Console.ReadKey(true);
-            Console.Clear();
         }
 
         // This method is used to wrap text into multiple lines to fit within the console to make it more readable
@@ -2871,7 +2861,21 @@ namespace CGC_sage_debug
                     { }
                     else
                     {
-                        Position.X += 2; // adjust the cursor to the right
+                        if (Position.X == -3 && Position.Y == 1 && maxRows > 5 || Position.X == -1 && Position.Y == 1 && maxRows > 6 || Position.X == 1 && Position.Y == 1 && maxRows > 7 || Position.X == 3 && Position.Y == 1 && maxRows > 8 || Position.X == 5 && Position.Y == 1 && maxRows > 9)
+                        {
+                            if (Position.X == -3 && Position.Y == 1 && maxRows == 6 || Position.X == -1 && Position.Y == 1 && maxRows == 7 || Position.X == 1 && Position.Y == 1 && maxRows == 8 || Position.X == 3 && Position.Y == 1 && maxRows == 9 || Position.X == 5 && Position.Y == 1 && maxRows > 10)
+                            {
+
+                            }
+                            else
+                            {
+                                Position.X += 2; // adjust the cursor to the right 
+                            }
+                        }
+                        else if (Position.X == -3 && Position.Y == 0 || Position.X == -1 && Position.Y == 0 || Position.X == 1 && Position.Y == 0 || Position.X == 3 && Position.Y == 0 || Position.X == 5 && Position.Y == 0)
+                        {
+                            Position.X += 2; // adjust the cursor to the right
+                        }
                         Console.SetCursorPosition(width / 2 + Position.X - 1, height / 2 + 5 + Position.Y); // Position the Cursor
                     }
                 }
@@ -2894,7 +2898,10 @@ namespace CGC_sage_debug
                         { }
                         else
                         {
-                            Position.Y += 1; // adjust the cursor down
+                            if (Position.X == -3 && maxRows > 5 || Position.X == -1 && maxRows > 6 || Position.X == 1 && maxRows > 7 || Position.X == 3 && maxRows > 8 || Position.X == 5 && maxRows > 9)
+                            {
+                                Position.Y += 1; // adjust the cursor down
+                            }
                             Console.SetCursorPosition(width / 2 + Position.X - 1, height / 2 + 5 + Position.Y); // Position the Cursor
                         }
                     }
@@ -2956,7 +2963,19 @@ namespace CGC_sage_debug
 
                         switch (res)
                         {
-                            case "Y": loop = false; game = 'e'; break; // quits the game
+                            case "Y":
+                                //Ending Message
+                                Console.Clear();
+                                Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -3);
+                                Console.Write("Game Over!!");
+                                Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -2);
+                                Console.Write("Thank you for Playing!!");
+                                Console.SetCursorPosition(Console.WindowWidth / 2 - 8, Console.WindowHeight / 2 + -1);
+                                Console.Write("Score: " + score);
+                                Console.ReadKey(true);
+                                Console.Clear();
+                                StartProgram();
+                                break; // quits the game
                             case "N": // deletes the message and go back to original position
                                 Console.SetCursorPosition(width / 2 - 10, height / 2 + 7);
                                 Console.Write("                         "); loop = false; Console.SetCursorPosition(width / 2 + Position.X - 1, height / 2 + 5 + Position.Y); break;
@@ -3189,7 +3208,7 @@ namespace CGC_sage_debug
             {
                 Console.WriteLine("Error: The specified size is too small or too large.");
             }
-        }   
+        }
     }
 
 }
@@ -3214,5 +3233,4 @@ struct Boxes
     public static int checkBoxes;
     public static int wrongBoxes;
 }
-
 
