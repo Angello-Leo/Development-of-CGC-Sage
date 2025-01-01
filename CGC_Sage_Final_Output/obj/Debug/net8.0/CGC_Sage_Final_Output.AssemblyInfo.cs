@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CGC_Sage_Final_Output")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b34263b64105af9e9da58dcaa3f67a8599e778ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f72d0a47e3fd098c7ede019ed4c54cd9550a4dba")]
 [assembly: System.Reflection.AssemblyProductAttribute("CGC_Sage_Final_Output")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CGC_Sage_Final_Output")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
